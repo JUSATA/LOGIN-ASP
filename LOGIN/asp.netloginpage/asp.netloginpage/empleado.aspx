@@ -1,0 +1,89 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="empleado.aspx.cs" Inherits="asp.netloginpage.empleado" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+        <meta charset="utf-8" />  
+    <link rel="stylesheet" type="text/css" href="estilo-empleado.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">  
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>  
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>  
+    <script type="text/javascript">  
+
+    </script>  
+</head>
+<body>
+
+
+      <div class="container py-5">  
+        <h4 class="text-center text-uppercase">Registro empleados<h4>  
+
+        <button type="button" class="btn btn-primary rounded-0" data-toggle="modal" data-target="#Employee">Agregar nuevo</button>  
+        <div class="modal fade" id="Employee">  
+            <div class="modal-dialog">  
+                <div  class="modal-content">  
+                    <form class="form1"  runat="server" novalidate>  
+     <div>
+        <asp:Label ID="lblUserDetailss" runat="server" Text=""></asp:Label>
+        <br />
+        <asp:Button ID="btnLogouts" runat="server" Text="Logout" OnClick="btnLogo_Click" />
+
+        <asp:Label ID="lblErrorMessage" runat="server" Text="Credenciales erroneas" ForeColor="Red"></asp:Label>
+        
+        <asp:GridView ID="GridView1" runat="server"></asp:GridView>
+
+        <asp:TextBox ID="txtUserName" runat="server" class="form-control"  ></asp:TextBox>
+    </div>
+                        <div class="modal-header">
+                            <h5 class="modal-title text-uppercase text-center">Ingreso de empleado</h5>  
+                        </div>  
+                        <div class="modal-body">  
+  
+                            <div class="form-row">  
+                                <div class="col-sm-6 col-md-6 col-xs-12">  
+                                    <label for="firstName">Sucursal</label>  
+                                    <input  id="sucursal" runat="server" type="text" placeholder="sucursal" class="form-control" aria-describedby="inputGroupPrepend" required />  
+                                    <div class="invalid-feedback">  
+                                        Por favor ingrese sucursal..  
+                                    </div>  
+                                </div>
+                                
+                                <div class="col-sm-6 col-md-6 col-xs-12">  
+                                    <label for="lastName">ciudad</label>  
+                                    <input id= "ciudad" runat="server" type="text" placeholder="ciudad" class="form-control" aria-describedby="inputGroupPrepend" required />  
+                                    <div class="invalid-feedback">  
+                                        Por favor ingrese ciudad..  
+                                    </div>  
+                                </div>  
+                            </div>  
+                            <div class="form-row">  
+                                <div class="col-sm-4 col-md-4 col-xs-12">  
+                                    <label for="city">Direccion</label>  
+                                    <input id="direcci"  runat="server" type="text" placeholder="Direccion" class="form-control" aria-describedby="inputGroupPrepend" required />  
+                                    <div class="invalid-feedback">  
+                                       Por favor ingrese direccion.  
+                                    </div>  
+                                </div>  
+                                <div class="col-sm-4 col-md-4 col-xs-12">  
+                                    <label for="state">telefono</label>  
+                                    <input id="telefono"  runat="server" type="text" placeholder="telefono" class="form-control" aria-describedby="inputGroupPrepend" required />  
+                                    <div class="invalid-feedback">  
+                                        Por favor ingrese telefono.  
+                                    </div>  
+                                </div> 
+                            </div>  
+                        </div>  
+                        <div class="modal-footer">
+
+                            <button type="button" runat="server"  class="btn btn-secondary" data-dismiss="modal">Cancelar</button>  
+                            <asp:Button ID="Button1" type="submit"   onclick="ingresar_Click" runat="server" class="btn btn-primary rounded-4" text="Insertar " />
+                        </div>  
+                        
+                    </form>  
+                </div>  
+            </div>  
+        </div>  
+    </div>  
+</body>
+</html>
